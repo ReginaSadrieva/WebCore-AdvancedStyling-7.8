@@ -92,6 +92,58 @@ body {
   font-family: inherit; 
 }
 
+/* ================== Hover effects ================== */
+/* Ремонт техники — opacity + transition */
+.menu__item:nth-child(1):hover {
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+/* Услуги и сервисы — glow effect using filter */
+.menu__item:nth-child(2):hover {
+  filter: brightness(1.3);
+  transition: filter 0.3s ease;
+}
+
+/* Корпоративным клиентам — slight rotation */
+.menu__item:nth-child(3):hover {
+  transform: rotate(-1deg);
+  transition: transform 0.3s ease;
+}
+
+/* Продавцам техники — scale (enlargement) */
+.menu__item:nth-child(4):hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* Партнерам — inner shadow */
+.menu__item:nth-child(5):hover {
+  box-shadow: inset 0 -2px 0 #ff3e79;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Производителям — gradient background */
+.menu__item:nth-child(6):hover {
+  background: linear-gradient(to right, #41f6d7 0%, #ff3e79 100%);
+  color: white;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+/* Наши сервисные центры — rounded corners */
+.menu__item:nth-child(7):hover {
+  border-radius: 8px;
+  background-color: #f4f4f4;
+  transition: background-color 0.3s ease, border-radius 0.3s ease;
+}
+
+/* Контакты — shadow and smooth movement */
+.menu__item:nth-child(8):hover {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transform: translateX(2px);
+  transition: all 0.3s ease;
+}
+
 .menu__item--active {
   color: #7e7e82;
   position: relative;
