@@ -1,27 +1,26 @@
 /* ================== FONTS ================== */
 @font-face {
-    font-family: 'TT Lakes';
-    src: url(../assets/fonts/TTLakes-Light.ttf) format('truetype');
-    font-weight: 300;
-    font-style: normal;
+  font-family: "TT Lakes";
+  src: url(../assets/fonts/TTLakes-Light.ttf) format("truetype");
+  font-weight: 300;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'TT Lakes';
-    src: url('../assets/fonts/TTLakes-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
+  font-family: "TT Lakes";
+  src: url("../assets/fonts/TTLakes-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'TT Lakes';
-    src: url('../assets/fonts/TTLakes-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
+  font-family: "TT Lakes";
+  src: url("../assets/fonts/TTLakes-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
 }
 
 /* ================== GLOBAL RESET ================== */
-
 * {
   margin: 0;
   padding: 0;
@@ -29,7 +28,7 @@
 }
 
 body {
-  font-family: 'TT Lakes', sans-serif;
+  font-family: "TT Lakes", sans-serif;
 }
 
 /* ================== MENU ================== */
@@ -64,10 +63,10 @@ body {
 }
 
 .menu__logo {
-    display: block;
-    height: 51px;
-    width: 97px;
-    margin-left: -20px;
+  display: block;
+  height: 51px;
+  width: 97px;
+  margin-left: -20px;
 }
 
 .menu__nav {
@@ -86,10 +85,26 @@ body {
   color: #1b1c21;
   cursor: pointer;
   background: none;
-  border: none;    
-  text-align: left; 
-  padding: 0;       
-  font-family: inherit; 
+  border: none;
+  text-align: left;
+  padding: 0;
+  font-family: inherit;
+}
+
+.menu__item--active {
+  animation: pulse 2s infinite;
+  color: #7e7e82;
+  position: relative;
+}
+
+.menu__item--active::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #41f6d7;
 }
 
 /* ================== Hover effects ================== */
@@ -139,28 +154,53 @@ body {
 
 /* Контакты — shadow and smooth movement */
 .menu__item:nth-child(8):hover {
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transform: translateX(2px);
   transition: all 0.3s ease;
 }
 
-.menu__item--active {
-  color: #7e7e82;
-  position: relative;
+/* Pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
-.menu__item--active::before {
-  content: '';
-  position: absolute;
-  left: -24px;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background-color: #41f6d7;
+/* Linear Gradient */
+.menu__item:hover {
+  border: 2px solid;
+  border-image: linear-gradient(to right, #41f6d7, #ff3e79) 1;
+  transition: border 0.3s ease;
+}
+
+/* 3D Rotation and Hover */
+.menu__item:hover {
+  transform: perspective(500px) rotateY(10deg);
+  transition: transform 0.4s ease;
+}
+
+/* Hover Blur and Brightness */
+.menu__item:hover {
+  filter: brightness(1.2) blur(0.5px);
+  transition: filter 0.3s ease;
+}
+
+/* Box shadow - Active state */
+.menu__item:active {
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transform: scale(0.98);
 }
 
 /* ================== FOOTER ================== */
-
 .menu__footer {
   display: flex;
   flex-direction: column;
